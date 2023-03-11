@@ -5,6 +5,7 @@ public class Wizard extends Character{
     private String wand;
 
     public Wizard(String pet, String house, String wand) {
+        super();
         this.pet = pet;
         this.house = house;
         this.wand = wand;
@@ -32,5 +33,10 @@ public class Wizard extends Character{
 
     public void setWand(String wand) {
         this.wand = wand;
+    }
+
+    @Override
+    public int health() {
+        return 100;
     }
 }
