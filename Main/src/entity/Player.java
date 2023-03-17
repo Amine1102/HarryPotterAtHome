@@ -8,12 +8,12 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
-public class Wizard extends Character {
+public class Player extends Character {
 
     GamePanel gp;
     KeyHandler keyH;
 
-    public Wizard(GamePanel gp, KeyHandler keyH) {
+    public Player(GamePanel gp, KeyHandler keyH) {
         this.gp = gp;
         this.keyH = keyH;
         setDefaultValues();
@@ -42,24 +42,35 @@ public class Wizard extends Character {
         }
     }
 
-    public void update(){
-        if(keyH.upPressed == true){
-            direction = "up";
-            y -= speed;
-        }
-        else if(keyH.downPressed==true){
-            direction = "down";
-            y += speed;
-        }
-        else if (keyH.leftPressed==true) {
-            direction = "left";
-            x -= speed;
-        }
-        else if (keyH.rightPressed==true) {
-            direction = "right";
-            x += speed;
-        }
+    public void update(){ // called 60 times per seconds
 
+        if(keyH.upPressed == true || keyH.downPressed==true || keyH.leftPressed==true || keyH.rightPressed==true ) {
+
+
+            if (keyH.upPressed == true) {
+                direction = "up";
+                y -= speed;
+            } else if (keyH.downPressed == true) {
+                direction = "down";
+                y += speed;
+            } else if (keyH.leftPressed == true) {
+                direction = "left";
+                x -= speed;
+            } else if (keyH.rightPressed == true) {
+                direction = "right";
+                x += speed;
+            }
+
+            spriteCounter++;
+            if (spriteCounter > 11) { //speed animation
+                if (spriteNum == 1) {
+                    spriteNum = 2;
+                } else if (spriteNum == 2) {
+                    spriteNum = 1;
+                }
+                spriteCounter = 0;
+            }
+        }
     }
 
 
@@ -68,16 +79,36 @@ public class Wizard extends Character {
 
         switch (direction){
             case "up":
-                image = up1;
+                if (spriteNum ==1){
+                    image = up1;
+                }
+                if (spriteNum == 2){
+                    image = up2;
+                }
                 break;
             case "down":
-                image = down1;
+                if (spriteNum ==1){
+                    image = down1;
+                }
+                if (spriteNum == 2){
+                    image = down2;
+                }
                 break;
             case "right":
-                image = right1;
+                if (spriteNum ==1){
+                    image = right1;
+                }
+                if (spriteNum == 2){
+                    image = right2;
+                }
                 break;
             case "left":
-                image = left1;
+                if (spriteNum ==1){
+                    image = left1;
+                }
+                if (spriteNum == 2){
+                    image = left2;
+                }
                 break;
         }
         g2.drawImage(image, x, y, gp.tileSize, gp.tileSize, null);

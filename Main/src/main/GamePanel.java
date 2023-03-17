@@ -1,6 +1,6 @@
 package main;
 
-import entity.Wizard;
+import entity.Player;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,7 +19,7 @@ public class GamePanel extends JPanel implements Runnable {
 
     KeyHandler keyH = new KeyHandler();
     Thread gameThread;
-    Wizard Wizard = new Wizard(this, keyH);
+    Player Player = new Player(this, keyH);
 
     //Set plater's default position
     int playerX = 100;
@@ -77,7 +77,7 @@ public class GamePanel extends JPanel implements Runnable {
     //To go right : x increase
     //To go down : y increase
     public void update(){
-        Wizard.update();
+        Player.update();
 
     }
 
@@ -85,7 +85,7 @@ public class GamePanel extends JPanel implements Runnable {
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D)g;
 
-        Wizard.draw(g2);
+        Player.draw(g2);
 
         g2.dispose();
     }
