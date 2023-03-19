@@ -17,17 +17,24 @@ public class GamePanel extends JPanel implements Runnable {
     public final int maxScreenRow = 12;
     public final int screenWidth = tileSize * maxScreenCol;
     public final int screenHeight = tileSize * maxScreenRow;
+
+    //World settings
+    public final int maxWorldCol = 50;
+    public final int maxWorldRow = 50;
+    public final int worldWidth = tileSize * maxWorldCol;
+    public final int worldHeight = tileSize * maxWorldRow;
+
+
     int FPS = 60;
 
     TileManager tileM = new TileManager(this);
-
     KeyHandler keyH = new KeyHandler();
     Thread gameThread;
-    Player Player = new Player(this, keyH);
+    public Player player = new Player(this, keyH);
 
     //Set plater's default position
-    int playerX = 100;
-    int playerY = 100;
+    int playerX = 22;
+    int playerY = 22;
     int playerSpeed = 4; //Move by 4 pixels
 
     public GamePanel() {
@@ -81,7 +88,7 @@ public class GamePanel extends JPanel implements Runnable {
     //To go right : x increase
     //To go down : y increase
     public void update(){
-        Player.update();
+        player.update();
 
     }
 
@@ -90,7 +97,7 @@ public class GamePanel extends JPanel implements Runnable {
         Graphics2D g2 = (Graphics2D)g;
         tileM.draw(g2);
 
-        Player.draw(g2);
+        player.draw(g2);
 
         g2.dispose();
     }
