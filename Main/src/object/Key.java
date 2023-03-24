@@ -13,5 +13,6 @@ public class Key extends SuperObject{
         }catch (IOException e){
             e.printStackTrace();
         }
+        solidArea.x = 5;
     }
 }
