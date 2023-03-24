@@ -1,8 +1,9 @@
 package entity;
 
+import java.awt.*;
 import java.awt.image.BufferedImage;
 
-public abstract class Character {
+public abstract class Entity {
     public int worldX, worldY;
     public int speed;
 
@@ -11,6 +12,9 @@ public abstract class Character {
 
     public int spriteCounter = 0;
     public int spriteNum = 1;
+
+    public Rectangle solidArea;
+    public boolean collisionOn = false;
 }
 
 
