@@ -14,6 +14,7 @@ public class Player extends Entity {
     KeyHandler keyH;
     public final int screenX;
     public final int screenY;
+    int hasKey = 0; //how many key has player?
 
     public Player(GamePanel gp, KeyHandler keyH) {
         this.gp = gp;
@@ -71,9 +72,13 @@ public class Player extends Entity {
             }
 
 
-            // check collision
+            // check tile collision
             collisionOn = false;
             gp.cChecker.checkTile(this);
+
+            //check object collision
+            int objIndex = gp.cChecker.checkObject(this,true);
+            pickUpObject(objIndex);
 
             // if collision = false, player can move
             if(collisionOn == false){
@@ -102,6 +107,28 @@ public class Player extends Entity {
                 spriteCounter = 0;
             }
         }
+    }
+
+    public void pickUpObject(int i){
+        if(i != 999){
+            String objectName = gp.obj[i].name;
+            switch (objectName){
+                case "Key":
+                    hasKey++;
+                    gp.obj[i] = null;
+                    System.out.println("Key : "+hasKey);
+                    break;
+                case "Door":
+                    if(hasKey > 0){
+                        gp.obj[i] = null;
+                        hasKey--;
+                        System.out.println("Key " + hasKey);
+                    }
+                    break;
+            }
+        }
+
+
     }
 
 
