@@ -28,11 +28,17 @@ public class GamePanel extends JPanel implements Runnable {
 
     int FPS = 60;
 
+
+    //System
     TileManager tileM = new TileManager(this);
     KeyHandler keyH = new KeyHandler();
-    Thread gameThread;
     public CollisionChecker cChecker = new CollisionChecker(this);
     public AssetSetter aSetter = new AssetSetter(this);
+    public UI ui = new UI(this);
+    Thread gameThread;
+
+
+    //Entity & objects
     public Player player = new Player(this, keyH);
     public SuperObject obj[] = new SuperObject[10]; //10 Slots for objects
 
@@ -103,18 +109,21 @@ public class GamePanel extends JPanel implements Runnable {
     public void paintComponent(Graphics g){
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D)g;
+
         //tile
         tileM.draw(g2);
-        //player
-        player.draw(g2);
 
         //obj
         for (int i= 0; i<obj.length; i++){
             if(obj[i] != null){
                 obj[i].draw(g2, this);
             }
+        //player
+        player.draw(g2);
         }
 
+        //UI
+        ui.draw(g2);
 
         g2.dispose();
     }

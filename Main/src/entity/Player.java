@@ -14,7 +14,7 @@ public class Player extends Entity {
     KeyHandler keyH;
     public final int screenX;
     public final int screenY;
-    int hasKey = 0; //how many key has player?
+    public int hasKey = 0; //how many key has player?
 
     public Player(GamePanel gp, KeyHandler keyH) {
         this.gp = gp;
@@ -124,6 +124,9 @@ public class Player extends Entity {
                         hasKey--;
                         System.out.println("Key " + hasKey);
                     }
+                    break;
+                case "Chest":
+                    gp.ui.gameFinished = true;
                     break;
             }
         }
