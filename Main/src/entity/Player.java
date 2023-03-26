@@ -122,28 +122,12 @@ public class Player extends Entity {
 
     public void pickUpObject(int i){
         if(i != 999){
-            String objectName = gp.obj[i].name;
-            switch (objectName){
-                case "Key":
-                    hasKey++;
-                    gp.obj[i] = null;
-                    System.out.println("Key : "+hasKey);
-                    break;
-                case "Door":
-                    if(hasKey > 0){
-                        gp.obj[i] = null;
-                        hasKey--;
-                        System.out.println("Key " + hasKey);
-                    }
-                    break;
-                case "Chest":
-                    gp.ui.gameFinished = true;
-                    break;
+
             }
         }
 
 
-    }
+
 
 
     public void draw(Graphics2D g2){

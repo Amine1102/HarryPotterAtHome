@@ -31,7 +31,7 @@ public class GamePanel extends JPanel implements Runnable {
 
     //System
     TileManager tileM = new TileManager(this);
-    KeyHandler keyH = new KeyHandler();
+    KeyHandler keyH = new KeyHandler(this);
     public CollisionChecker cChecker = new CollisionChecker(this);
     public AssetSetter aSetter = new AssetSetter(this);
     public UI ui = new UI(this);
@@ -41,6 +41,13 @@ public class GamePanel extends JPanel implements Runnable {
     //Entity & objects
     public Player player = new Player(this, keyH);
     public SuperObject obj[] = new SuperObject[10]; //10 Slots for objects
+
+
+    // Game state
+    public int gameState;
+    public final int playState = 1;
+    public final int pauseState = 2;
+
 
     //Set plater's default position
     int playerX = 22;
@@ -56,7 +63,10 @@ public class GamePanel extends JPanel implements Runnable {
     }
 
     public void setupGame(){
+
         aSetter.setObject();
+        gameState = playState;
+
     }
 
     public void startGameThread() {
@@ -102,7 +112,12 @@ public class GamePanel extends JPanel implements Runnable {
     //To go right : x increase
     //To go down : y increase
     public void update(){
-        player.update();
+        if(gameState == playState){
+            player.update();
+        }
+        if (gameState == pauseState){
+            //Pause the game with the key we want (p)
+        }
 
     }
 
