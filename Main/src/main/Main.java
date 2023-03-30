@@ -67,18 +67,6 @@ public class Main {
                     status = true;
                     break;
                 case "2":
-                    loadGame();
-                    status = true;
-                    break;
-                case "3":
-                    settings();
-                    status = true;
-                    break;
-                case "4":
-                    IO.credits();
-                    status = true;
-                    break;
-                case "5":
                     System.exit(0);
             }
 
@@ -94,17 +82,30 @@ public class Main {
             String selection = USERINPUT.nextLine();
             switch (selection) {
                 case "1":
-                    status = IO.displayPlayerStats("Warrior", "A tough, "
-                                    + "well-rounded fighter with a balanced skillset.",
+                    status = IO.displayPlayerStats("Gryffindor", "Tough, more resistant to damages ",
                             100, 20, 30, 3, 0.10);
-                    currPlayer = Player.newWarrior();
+                    currPlayer = Player.newGryffindor();
+
 
                     break;
                 case "2":
-                    status = IO.displayPlayerStats("Dueler", "A quick, nimble "
-                            + "duelist with an aptitude for landing critical "
-                            + "attacks.", 80, 10, 50, 2, 0.18);
-                    currPlayer = Player.newDuelist();
+                    status = IO.displayPlayerStats("Hufflepuff", "Potions are more efficients ",
+                            80, 10, 50, 2, 0.18);
+                    currPlayer = Player.newHufflepuff();
+
+
+                    break;
+                case "3":
+                    status = IO.displayPlayerStats("Ravenclaw", "Max accuracy ",
+                            80, 10, 50, 2, 0.18);
+                    currPlayer = Player.newRavenclaw();
+
+
+                    break;
+                case "4":
+                    status = IO.displayPlayerStats("Slyntherin", "Deals more damages ",
+                            80, 10, 50, 2, 0.18);
+                    currPlayer = Player.newSlytherin();
 
                     break;
             }
@@ -115,13 +116,6 @@ public class Main {
 
     }
 
-    public static void loadGame() {
-
-    }
-
-    public static void settings() {
-
-    }
 
 }
 

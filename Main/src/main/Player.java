@@ -59,15 +59,25 @@ public class Player {
        // IO.heal(this.hitPoints);
     }
 
-    public static Player newWarrior() {
-        return new Player("Warrior", "A tough, well-rounded fighter with"
-                + " a balanced skillset.", 100, 20, 30, 3, 10);
+    public static Player newGryffindor() {
+        return new Player("Gryffindor", "Tough, more resistant to damages"
+                , 1000, 20, 30, 5, 10);
     }
 
-    public static Player newDuelist() {
-        return new Player("Duelist", "A quick, nimble duelist with an"
-                + " aptitude for landing critical attacks.", 8000, 10, 50, 2,
+    public static Player newHufflepuff() {
+        return new Player("hufflepuff", "Potions are more efficients"
+                , 1000, 10, 50, 2,
                 18);
+    }
+    public static Player newRavenclaw() {
+        return new Player("Ravenclaw", "Max accuracy"
+                , 1000, 10, 50, 2,
+                18);
+    }
+    public static Player newSlytherin() {
+        return new Player("Slytherin", "Deals more damages",
+                8000, 200, 80, 2,
+                20);
     }
 
     public String getDescription() {

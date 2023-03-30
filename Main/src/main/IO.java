@@ -26,13 +26,7 @@ public final class IO {
         System.out.println();
         System.out.println(" 1.      New Game        ");
         System.out.println();
-        System.out.println(" 2.     Load Game        ");
-        System.out.println();
-        System.out.println(" 3.      Settings        ");
-        System.out.println();
-        System.out.println(" 4.       Credits        ");
-        System.out.println();
-        System.out.println(" 5.     Exit Game        ");
+        System.out.println(" 2.     Exit Game        ");
         System.out.println();
         System.out.print(" Make a Selection: ");
         System.out.println();
@@ -46,21 +40,27 @@ public final class IO {
         System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
                 + "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
         System.out.println("------------------");
-        System.out.println("CHOOSE A CHARACTER");
+        System.out.println("The SORTING HAT will now assign you a house");
         System.out.println("------------------");
         System.out.println();
-        System.out.println("1. WARRI0R");
+        System.out.println("1. Gryffondor");
         System.out.println("----------");
-        System.out.println("A tough, well-rounded fighter with"
-                + " a balanced skillset.");
+        System.out.println("Tough, more resistant to damages");
         System.out.println();
-        System.out.println("2. DUELIST");
+        System.out.println("2. hufflepuff");
         System.out.println("----------");
-        System.out.println("A quick, nimble duelist with an"
-                + "aptitude for landing critical attacks.");
+        System.out.println("Potions are more efficients");
+        System.out.println();
+        System.out.println("3. Ravenclaw");
+        System.out.println("----------");
+        System.out.println("Max accuracy");
+        System.out.println();
+        System.out.println("4. Slyntherin");
+        System.out.println("----------");
+        System.out.println("Deals more damages");
         System.out.println();
         System.out.println("________________________");
-        System.out.print("Choose Either Character: ");
+        System.out.print("Choose Either House: ");
         System.out.println();
         System.out.println();
         System.out.println();
@@ -99,17 +99,6 @@ public final class IO {
         }
     }
 
-    public static void credits() {
-        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
-                + "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
-                + "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-        System.out.println("");
-        System.out.println("Would you like to return to the main menu? (y/n)");
-        if (Main.USERINPUT.nextLine().equals("y")) {
-            Main.mainMenu();
-        }
-    }
 
     public static void movePlayer(Player player) {
 
