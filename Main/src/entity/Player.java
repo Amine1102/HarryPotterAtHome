@@ -1,8 +1,10 @@
+/*
+
 package entity;
 
-import main.GamePanel;
+import main.Old.tile.GamePanel;
 import main.KeyHandler;
-import main.Tool;
+import main.Old.Tool;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -83,11 +85,11 @@ public class Player extends Entity {
             }
 
 
-            // check tile collision
+            // check main.Old.tile collision
             collisionOn = false;
             gp.cChecker.checkTile(this);
 
-            //check object collision
+            //check main.Old.object collision
             int objIndex = gp.cChecker.checkObject(this,true);
             pickUpObject(objIndex);
 
@@ -217,6 +219,8 @@ public class Player extends Entity {
 }
 
 
-     */
+
 
 }
+
+        */
