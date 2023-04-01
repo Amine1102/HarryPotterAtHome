@@ -31,6 +31,10 @@ public class Main {
         String houses = SortingHat.assignHouse(wizard);
         System.out.println("La maison assignée à " + wizard.getName() + " est " + houses);
 
+        Enemy enemy = new Enemy("Voldemort", 50, 5);
+
+        Fight fight = new Fight(wizard, enemy);
+        fight.start();
 
     }
 
