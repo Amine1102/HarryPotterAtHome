@@ -17,7 +17,7 @@ public class Fight {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("You find yourself in the dungeon's bathroom ");
-        System.out.println("A battle has  started between " + wizard.getName() + "and " +  enemy.getName() + "!! \n");
+        System.out.println("A battle has  started between " + wizard.getName() + " and " +  enemy.getName() + "!! \n");
 
         while (!gameOver){
             System.out.println("Choose your action ");
@@ -29,7 +29,6 @@ public class Fight {
             switch (choice){
                 case 1:
                     wizard.attack(enemy);
-                    System.out.println("You hit " + enemy.getName() + " right on his FACE ! ");
                     break;
                 case 2:
                     wizard.usePotion();
@@ -49,7 +48,7 @@ public class Fight {
             }
 
             enemy.attack(wizard);
-            System.out.println("The ");
+            System.out.println(enemy.getName() + " Hit you ! ");
 
             if(wizard.getHealth()<=0){
                 System.out.println("You have been killed by " + enemy.getName() + "!!");

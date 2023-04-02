@@ -96,8 +96,19 @@ public class Wizard implements Character{
     }
 
     public void attack(Character c){
-        Random rand = new
-        c.damage((this.damage));
+        Random rand = new Random();
+        int succesChance = rand.nextInt(10); //Random int between 0 .. 9
+        if(getHouse()== "Ravenclaw"){
+            succesChance =10;
+            System.out.println("Ravenclaw never miss ! "); //ravenclaw are more accurate
+        }
+        if(succesChance <6){ //If not ravenclaw, 60% of succes
+            c.damage((this.damage));
+            System.out.println("You dealt " + this.damage + " damage to " + c.getName() + "!");
+        }
+        else{
+            System.out.println("You missed ! ");
+        }
     }
 
     public void damage(int damage){
