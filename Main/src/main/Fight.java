@@ -24,8 +24,10 @@ public class Fight {
         if(player.getHouse()== "Ravenclaw"){
             succesChance =10;
             System.out.println("Ravenclaw never miss ! "); //ravenclaw are more accurate
+            player.setDamage(obj.getDmg());
+            System.out.println("You dealt " + player.getDamage() + " damage to " + enemy.getName() + "!");
         }
-        if(succesChance <8){ //If not ravenclaw, 60% of succes
+        else if(succesChance <8){ //If not ravenclaw, 80% of succes
             if(obj.getName() == "pierre"){
                 player.setDamage(obj.getDmg());
                 System.out.println("You dealt " + player.getDamage() + " damage to " + enemy.getName() + "!");

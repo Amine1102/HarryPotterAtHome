@@ -68,6 +68,8 @@ public class Main {
             case 3:
                 core = Core.UNICORN_TAIL_HAIR;
                 break;
+            default:
+                System.out.println(" invalid choice ! ");
         }
 
 
