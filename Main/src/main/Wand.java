@@ -15,8 +15,10 @@ public class Wand {
         return core;
     }
 
-    public void setCore(String core) {
+    public void setCore(String core, int size) {
+        this.size = size;
         this.core = core;
+
     }
 
     public int getSize() {

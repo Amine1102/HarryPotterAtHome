@@ -2,41 +2,45 @@ package main;
 
 import java.util.Scanner;
 
-// TODO: 02/04/2023 Creer differentes baguetes (wand) et en assigner une au hasard au sorcier
-// TODO: 02/04/2023 Alleger le main 
-// TODO: 02/04/2023 Creer chaque test unitaire 
+// TODO: 02/04/2023 Creer des test unitaire
 // TODO: 02/04/2023 Instructions dans un README GITHUB + Nom et prénom
 // TODO: 02/04/2023 Bien respecter le diagramme UML !  
 
 
 public class Main {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Créer une nouvelle instance de Wizard
+        System.out.println("Entrez le nom du sorcier : ");
+        String name = scanner.nextLine();
+
+
         // création d'une nouvelle instance de Wand
-        String core="Sureau";
-        int size = 40;
-        Wand wand = new Wand(core, size);
+        System.out.println("Choose wand's core : ");
+        String core= scanner.nextLine();
+        System.out.println("Choose wand's size : ");
+        int size= scanner.nextInt();
 
         //Création d'une nouvelle instance de SortingHat
         SortingHat sortingHat = new SortingHat();
 
-        // Créer une nouvelle instance de Wizard
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Entrez le nom du sorcier : ");
-        String name = scanner.nextLine();
         int health = 100;
         int damage = 25;
+
+        Wand wand = new Wand(core, size);
         Wizard wizard = new Wizard(name, health, damage, wand);
 
         // Utiliser les méthodes et propriétés de l'objet Wizard créé
         System.out.println("Wizard Name : " + wizard.getName());
         System.out.println("Wizard Health : " + wizard.getHealth());
         System.out.println("Wizard Damage : " + wizard.getDamage());
-        System.out.println("Size Wand : " + wizard.getWand().getSize());   //METTRE PLUTOT SIZE
+        System.out.println("Size Wand : " + wizard.getWand().getSize());
         System.out.println("Core Wand : " + wizard.getWand().getCore());
 
         // Assigner une maison au sorcier
         String houses = SortingHat.assignHouse(wizard);
-        System.out.println("La maison assignée à " + wizard.getName() + " est " + houses);
+        System.out.println( wizard.getName() + "'s house is " + houses);
 
         Enemy enemy = new Enemy("Troll", 60, 5);
 

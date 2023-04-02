@@ -38,6 +38,38 @@ public class Wizard implements Character{
         }
     }
 
+
+    public void attack(Character c){
+        Random rand = new Random();
+        int succesChance = rand.nextInt(10); //Random int between 0 .. 9
+        if(getHouse()== "Ravenclaw"){
+            succesChance =10;
+            System.out.println("Ravenclaw never miss ! "); //ravenclaw are more accurate
+        }
+        if(succesChance <6){ //If not ravenclaw, 60% of succes
+            c.damage((this.damage));
+            System.out.println("You dealt " + this.damage + " damage to " + c.getName() + "!");
+        }
+        else{
+            System.out.println("You missed ! ");
+        }
+    }
+
+    public void usePotion(){
+
+
+        if(this.potions.isEmpty()){
+            System.out.println("You dont have any potion");
+            return;
+        }
+        (potions.get(potions.size() - 1)).regenHealth(this);
+
+        potions.remove(potions.size() - 1);
+        System.out.println("You have : " + potions.size() +" potions");
+
+    }
+
+
     //GETTER SETTER
 
 
@@ -84,32 +116,8 @@ public class Wizard implements Character{
         this.potions.add(p);
     }
 
-    public void usePotion(){
 
-        if(this.potions.isEmpty()){
-            System.out.println("You dont have any potion");
-            return;
-        }
-        (potions.get(potions.size() - 1)).regenHealth(this);
 
-        potions.remove(potions.size() - 1);
-    }
-
-    public void attack(Character c){
-        Random rand = new Random();
-        int succesChance = rand.nextInt(10); //Random int between 0 .. 9
-        if(getHouse()== "Ravenclaw"){
-            succesChance =10;
-            System.out.println("Ravenclaw never miss ! "); //ravenclaw are more accurate
-        }
-        if(succesChance <6){ //If not ravenclaw, 60% of succes
-            c.damage((this.damage));
-            System.out.println("You dealt " + this.damage + " damage to " + c.getName() + "!");
-        }
-        else{
-            System.out.println("You missed ! ");
-        }
-    }
 
     public void damage(int damage){
         this.health = this.health - damage;
@@ -125,6 +133,8 @@ public class Wizard implements Character{
 
     public void levelUp(){ //When u win a fight
         Scanner scanner = new Scanner(System.in);
+        System.out.println("You have " + this.getHealth() + " health");
+        System.out.println("You deal " + this.getDamage() + " damage");
         System.out.println("You can now level up ! ");
         System.out.println("Choose your upgrade : ");
         System.out.println("1. Increase Health ");
@@ -140,7 +150,7 @@ public class Wizard implements Character{
             case 2:
                 this.damage +=10;
                 System.out.println("Your damage has been increased by 10!");
-                System.out.println("You will deal " + getDamage()  + " !");
+                System.out.println("You will deal " + getDamage()  + " damage !");
 
                 break;
             default:

@@ -11,6 +11,7 @@ public class Fight {
         this.wizard = wizard;
         this.enemy = enemy;
         this.gameOver = false;
+
     }
 
     public void startLevel1(){
@@ -32,7 +33,12 @@ public class Fight {
                     break;
                 case 2:
                     wizard.usePotion();
-                    System.out.println(" You Heal yourself");
+                    if(wizard.getPotions().size()==0){
+                        System.out.println("No potions !!");
+                    }
+                    else {
+                        System.out.println(" You Heal yourself");
+                    }
                     break;
                 default:
                     System.out.println(" invalid choice ! ");
