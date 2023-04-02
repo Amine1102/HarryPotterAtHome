@@ -16,11 +16,12 @@ public class Fight {
     public void startLevel1(){
         Scanner scanner = new Scanner(System.in);
 
+        System.out.println("You find yourself in the dungeon's bathroom ");
         System.out.println("A battle has  started between " + wizard.getName() + "and " +  enemy.getName() + "!! \n");
 
         while (!gameOver){
             System.out.println("Choose your action ");
-            System.out.println("1. Attack ");
+            System.out.println("1. Use Wingardium Leviosa ");
             System.out.println("2. Use potion");
 
             int choice = scanner.nextInt();
@@ -28,9 +29,11 @@ public class Fight {
             switch (choice){
                 case 1:
                     wizard.attack(enemy);
+                    System.out.println("You hit " + enemy.getName() + " right on his FACE ! ");
                     break;
                 case 2:
                     wizard.usePotion();
+                    System.out.println(" You Heal yourself");
                     break;
                 default:
                     System.out.println(" invalid choice ! ");
@@ -39,11 +42,14 @@ public class Fight {
 
             if (enemy.getHealth() <=0){
                 System.out.println("Congratulations, you have defeated " + enemy.getName() + "!");
+                System.out.println("You can now level up");
+                wizard.levelUp();
                 gameOver = true;
                 break;
             }
 
             enemy.attack(wizard);
+            System.out.println("The ");
 
             if(wizard.getHealth()<=0){
                 System.out.println("You have been killed by " + enemy.getName() + "!!");

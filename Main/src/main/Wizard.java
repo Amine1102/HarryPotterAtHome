@@ -1,6 +1,7 @@
 package main;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Wizard implements Character{
 
@@ -107,6 +108,15 @@ public class Wizard implements Character{
 
     public void setPotions(ArrayList<Potion> potions) {
         this.potions = potions;
+    }
+
+    public void levelUp(){
+        Random rand = new Random();
+        int newHealth = rand.nextInt(20) + 10;
+        int newDamage = rand.nextInt(5)+1;
+        setHealth(getHealth() + newHealth);
+        setDamage(getDamage() + newDamage);
+        System.out.println("Congratulations, you leveled up! Your health is now " + getHealth() + " and your damage is now " + getDamage() + ".");
     }
 }
 
