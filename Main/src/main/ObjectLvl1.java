@@ -14,10 +14,10 @@ public class ObjectLvl1 {
 
     @Override
     public String toString() {
-        return "name :"+this.name+ ", number of this : "+nbObj+ ", and damage that should make : "+ this.dmg;
+        return "You have " + nbObj + " " + this.name + ", and this make " + this.dmg;
     }
 
-    public String getName(String pierre) {
+    public String getName() {
         return name;
     }
 

@@ -2,9 +2,17 @@ package main;
 
 import java.util.Scanner;
 
-// TODO: 02/04/2023 Creer des test unitaire
-// TODO: 02/04/2023 Instructions dans un README GITHUB + Nom et prénom
-// TODO: 02/04/2023 Create pet
+// TODO: 02/04/2023 Unit test
+/*
+Enemy : OK
+Fight :
+Main : OK
+ObjectLvl1 : OK
+Potion : OK
+SortingHat : OK
+Wand :
+Wizard :
+ */
 
 
 public class Main {
@@ -35,6 +43,10 @@ public class Main {
                 break;
             case 4:
                 pet = Pet.TOAD;
+                break;
+            default:
+                System.out.println("Invalid input, pet will be set to default OWL");
+                pet = pet.OWL;
                 break;
         }
 

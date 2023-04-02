@@ -1,6 +1,4 @@
 package main;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -27,8 +25,8 @@ public class Fight {
             succesChance =10;
             System.out.println("Ravenclaw never miss ! "); //ravenclaw are more accurate
         }
-        if(succesChance <6){ //If not ravenclaw, 60% of succes
-            if(obj.getName("pierre") == "pierre"){
+        if(succesChance <8){ //If not ravenclaw, 60% of succes
+            if(obj.getName() == "pierre"){
                 player.setDamage(obj.getDmg());
                 System.out.println("You dealt " + player.getDamage() + " damage to " + enemy.getName() + "!");
             }

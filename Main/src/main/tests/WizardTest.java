@@ -1,53 +1,70 @@
-/*
+
 package main.tests;
 
-import main.Potion;
-import main.Wand;
-import main.Wizard;
+import main.*;
+
+import static org.junit.Assert.*;
 import org.junit.Test;
-import org.junit.jupiter.api.Assertions;
+import static org.junit.Assert.*;
+
+import java.util.ArrayList;
 
 public class WizardTest {
 
     @Test
-    public void testWizardName() {
-        Wizard wizard = new Wizard("Harry", 100, 10, new Wand("", 11));
-        Assertions.assertEquals("Harry", wizard.getName());
+    public void testConstructor() {
+        Wand wand = new Wand(Core.DRAGON_HEARTSTRING, 10);
+        Pet pet = Pet.TOAD;
+        Wizard wizard = new Wizard("Harry", 150, 20, wand, pet);
+
+        assertEquals("Harry", wizard.getName());
+        assertEquals(150, wizard.getHealth());
+        assertEquals(20, wizard.getDamage());
+        assertEquals(wand, wizard.getWand());
+        assertEquals(3, wizard.getPotions().size());
+        assertEquals(pet, wizard.getPet());
     }
 
     @Test
-    public void testWizardHealth() {
-        Wizard wizard = new Wizard("Hermione", 80, 10, new Wand("Vine", 10));
-        Assertions.assertEquals(80, wizard.getHealth());
-        wizard.setHealth(90);
-        Assertions.assertEquals(90, wizard.getHealth());
-        wizard.setHealth(-10);
-        Assertions.assertEquals(0, wizard.getHealth());
+    public void testSettersAndGetters() {
+        Wand wand = new Wand(Core.DRAGON_HEARTSTRING, 10);
+        Pet pet = Pet.TOAD;
+        Wizard wizard = new Wizard("Harry", 150, 20, wand, pet);
+
+        wizard.setName("Ron");
+        assertEquals("Ron", wizard.getName());
+
         wizard.setHealth(200);
-        Assertions.assertEquals(100, wizard.getHealth());
+        assertEquals(200, wizard.getHealth());
+
+        wizard.setDamage(30);
+        assertEquals(30, wizard.getDamage());
+
+        ArrayList<Potion> newPotions = new ArrayList<Potion>();
+        newPotions.add(new Potion());
+        wizard.setPotions(newPotions);
+        assertEquals(newPotions, wizard.getPotions());
     }
 
     @Test
-    public void testWizardDamage() {
-        Wizard wizard = new Wizard("Ron", 90, 15, new Wand("Oak", 12));
-        Assertions.assertEquals(15, wizard.getDamage());
-        wizard.setDamage(20);
-        Assertions.assertEquals(20, wizard.getDamage());
+    public void testAttack() {
+        Wand wand = new Wand(Core.DRAGON_HEARTSTRING, 10);
+        Pet pet = Pet.TOAD;
+        Wizard wizard = new Wizard("Harry", 150, 20, wand, pet);
+
+        Wizard enemy = new Wizard("Voldemort", 200, 30, wand, null);
+        wizard.attack(enemy);
+        assertTrue(enemy.getHealth() < 200);
+        // It's fail sometimes because of the acuracy, I didn't manage to make a usefull test
     }
 
     @Test
-    public void testWizardPotions() {
-        Wizard wizard = new Wizard("Neville", 80, 8, new Wand("Cherry", 9));
-        Assertions.assertEquals(3, wizard.getPotions().size());
-
-        Potion potion = new Potion();
-        wizard.addPotion(potion);
-        Assertions.assertEquals(4, wizard.getPotions().size());
+    public void testUsePotion() {
+        Wand wand = new Wand(Core.DRAGON_HEARTSTRING, 10);
+        Pet pet = Pet.TOAD;
+        Wizard wizard = new Wizard("Harry", 150, 20, wand, pet);
 
         wizard.usePotion();
-        Assertions.assertEquals(3, wizard.getPotions().size());
+        assertEquals(2, wizard.getPotions().size());
     }
 }
-
-
- */

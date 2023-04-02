@@ -37,6 +37,8 @@ public class Wizard implements Character{
         for(int i=0; i<3; i++){
             this.potions.add(new Potion());
         }
+
+        this.pet = pet;
     }
 
 
