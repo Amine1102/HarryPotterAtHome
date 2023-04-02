@@ -1,6 +1,6 @@
 /*
 
-package entity;
+package main.Old.entity;
 
 import main.Old.tile.GamePanel;
 import main.KeyHandler;

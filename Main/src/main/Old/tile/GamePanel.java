@@ -2,7 +2,7 @@
 
 package main.Old.tile;
 
-import entity.Player;
+import main.Old.entity.Player;
 import main.KeyHandler;
 import main.Old.AssetSetter;
 import main.Old.CollisionChecker;
