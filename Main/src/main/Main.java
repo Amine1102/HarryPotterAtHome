@@ -2,7 +2,11 @@ package main;
 
 import java.util.Scanner;
 
-// TODO: 02/04/2023 Creer differentes baguetes
+// TODO: 02/04/2023 Creer differentes baguetes (wand) et en assigner une au hasard au sorcier
+// TODO: 02/04/2023 Alleger le main 
+// TODO: 02/04/2023 Creer chaque test unitaire 
+// TODO: 02/04/2023 Instructions dans un README GITHUB + Nom et prénom
+// TODO: 02/04/2023 Bien respecter le diagramme UML !  
 
 
 public class Main {

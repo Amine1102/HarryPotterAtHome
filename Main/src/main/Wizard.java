@@ -123,7 +123,7 @@ public class Wizard implements Character{
         this.potions = potions;
     }
 
-    public void levelUp(){
+    public void levelUp(){ //When u win a fight
         Scanner scanner = new Scanner(System.in);
         System.out.println("You can now level up ! ");
         System.out.println("Choose your upgrade : ");
