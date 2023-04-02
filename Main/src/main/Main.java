@@ -34,7 +34,7 @@ public class Main {
         Enemy enemy = new Enemy("Voldemort", 50, 5);
 
         Fight fight = new Fight(wizard, enemy);
-        fight.start();
+        fight.startLevel1();
 
     }
 

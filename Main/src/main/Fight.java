@@ -13,7 +13,7 @@ public class Fight {
         this.gameOver = false;
     }
 
-    public void start(){
+    public void startLevel1(){
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("A battle has  started between " + wizard.getName() + "and " +  enemy.getName() + "!! \n");
@@ -33,7 +33,7 @@ public class Fight {
                     wizard.usePotion();
                     break;
                 default:
-                    System.out.println("invalid choice ! ");
+                    System.out.println(" invalid choice ! ");
                     continue;
             }
 
@@ -50,8 +50,8 @@ public class Fight {
                 gameOver = true;
             }
 
-            System.out.println(wizard.getName() + "has " + wizard.getHealth() + "health left.");
-            System.out.println(enemy.getName() + "has " + enemy.getHealth() + "health left.");
+            System.out.println(wizard.getName() + " has " + wizard.getHealth() + " health left.");
+            System.out.println(enemy.getName() + " has " + enemy.getHealth() + " health left.");
 
         }
 

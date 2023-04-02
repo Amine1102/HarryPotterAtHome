@@ -94,8 +94,9 @@ public class Wizard implements Character{
     }
 
     public void attack(Character c){
-
+        c.damage((this.damage));
     }
+
     public void damage(int damage){
         this.health = this.health - damage;
     }
