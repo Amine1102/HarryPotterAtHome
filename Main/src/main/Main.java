@@ -4,32 +4,73 @@ import java.util.Scanner;
 
 // TODO: 02/04/2023 Creer des test unitaire
 // TODO: 02/04/2023 Instructions dans un README GITHUB + Nom et prénom
-// TODO: 02/04/2023 Bien respecter le diagramme UML !  
+// TODO: 02/04/2023 Create pet
 
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Créer une nouvelle instance de Wizard
-        System.out.println("Entrez le nom du sorcier : ");
+        // Create a Wizard
+        System.out.println("Enter wizard's name : ");
         String name = scanner.nextLine();
 
+        //Choose ur PET
+        System.out.println("Choose ur pet");
+        System.out.println("1. OWL");
+        System.out.println("2. RAT");
+        System.out.println("3. CAT");
+        System.out.println("4. TOAD");
+        int choicePet = scanner.nextInt();
+        Pet pet = null;
+        switch (choicePet) {
+            case 1:
+                pet = Pet.OWL;
+                break;
+            case 2:
+                pet = Pet.RAT;
+                break;
+            case 3:
+                pet = Pet.CAT;
+                break;
+            case 4:
+                pet = Pet.TOAD;
+                break;
+        }
 
-        // création d'une nouvelle instance de Wand
+
+        // Create a Wand
         System.out.println("Choose wand's core : ");
-        String core= scanner.nextLine();
-        System.out.println("Choose wand's size : ");
-        int size= scanner.nextInt();
+        System.out.println("1. PHOENIX FEATHER");
+        System.out.println("2. DRAGON HEARTHSTRING");
+        System.out.println("3. UNICORN TAIL HAIR");
+        int choice = scanner.nextInt();
+        Core core = null;
+        switch (choice) {
+            case 1:
+                core = Core.PHOENIX_FEATHER;
+                break;
+            case 2:
+                core = Core.DRAGON_HEARTSTRING;
+                break;
+            case 3:
+                core = Core.UNICORN_TAIL_HAIR;
+                break;
+        }
 
-        //Création d'une nouvelle instance de SortingHat
+
+        System.out.println("Choose wand's size : ");
+        int size = scanner.nextInt();
+
+        //Sorting Hat
         SortingHat sortingHat = new SortingHat();
 
         int health = 100;
         int damage = 25;
 
         Wand wand = new Wand(core, size);
-        Wizard wizard = new Wizard(name, health, damage, wand);
+        Wizard wizard = new Wizard(name, health, damage, wand, pet);
+
 
         // Utiliser les méthodes et propriétés de l'objet Wizard créé
         System.out.println("Wizard Name : " + wizard.getName());
@@ -37,10 +78,11 @@ public class Main {
         System.out.println("Wizard Damage : " + wizard.getDamage());
         System.out.println("Size Wand : " + wizard.getWand().getSize());
         System.out.println("Core Wand : " + wizard.getWand().getCore());
+        System.out.println("Your Pet : " + wizard.getPet());
 
         // Assigner une maison au sorcier
         String houses = SortingHat.assignHouse(wizard);
-        System.out.println( wizard.getName() + "'s house is " + houses);
+        System.out.println(wizard.getName() + "'s house is " + houses);
 
         Enemy enemy = new Enemy("Troll", 60, 5);
 
@@ -48,7 +90,6 @@ public class Main {
         fight.startLevel1();
 
     }
-
 
 }
 

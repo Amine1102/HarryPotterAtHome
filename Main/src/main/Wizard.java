@@ -12,10 +12,11 @@ public class Wizard implements Character{
     private Wand wand;
     private String house;
     private ArrayList<Potion> potions;
+    private Pet pet;
 
     //Constructor
 
-    public Wizard(String name, int health, int damage, Wand wand){
+    public Wizard(String name, int health, int damage, Wand wand, Pet pet){
         this.name = name;
         if (health <0) {
             this.health = 0;
@@ -72,6 +73,14 @@ public class Wizard implements Character{
 
     //GETTER SETTER
 
+
+    public void setPet(Pet pet) {
+        this.pet = pet;
+    }
+
+    public Pet getPet() {
+        return pet;
+    }
 
     public String getHouse() {
         return house;

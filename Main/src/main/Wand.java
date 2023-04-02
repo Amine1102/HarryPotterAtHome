@@ -2,20 +2,20 @@ package main;
 
 public class Wand {
 
-    private String core;
+    private Core core;
     private int size;
 
-    public Wand(String core, int size){
+    public Wand(Core core, int size){
         this.core = core;
         this.size = size;
     }
 
     //GETTER SETTER
-    public String getCore(){
+    public Core getCore(){
         return core;
     }
 
-    public void setCore(String core, int size) {
+    public void setCore(Core core, int size) {
         this.size = size;
         this.core = core;
 
