@@ -1,6 +1,6 @@
 # HarryPotterAtHome, Amine LAIMECHE
 
-Now, only the 1st level is available
+Currently, only the 1st level is available
 
 1) Choose your wizard's name
 2) Choose your pet
