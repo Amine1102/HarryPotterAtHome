@@ -2,6 +2,7 @@ package main;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Wizard implements Character{
 
@@ -19,8 +20,8 @@ public class Wizard implements Character{
         if (health <0) {
             this.health = 0;
         }
-        else if(health > 100) {
-            this.health = 100;
+        else if(health > 200) {
+            this.health = 200;
         }
         else{
             this.health = health;
@@ -95,6 +96,7 @@ public class Wizard implements Character{
     }
 
     public void attack(Character c){
+        Random rand = new
         c.damage((this.damage));
     }
 
@@ -111,12 +113,29 @@ public class Wizard implements Character{
     }
 
     public void levelUp(){
-        Random rand = new Random();
-        int newHealth = rand.nextInt(20) + 10;
-        int newDamage = rand.nextInt(5)+1;
-        setHealth(getHealth() + newHealth);
-        setDamage(getDamage() + newDamage);
-        System.out.println("Congratulations, you leveled up! Your health is now " + getHealth() + " and your damage is now " + getDamage() + ".");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("You can now level up ! ");
+        System.out.println("Choose your upgrade : ");
+        System.out.println("1. Increase Health ");
+        System.out.println("2. Increase Damage");
+
+        int choice = scanner.nextInt();
+        switch (choice) {
+            case 1:
+                this.health +=20;
+                System.out.println("Your health has been increased by 20!");
+                System.out.println("Your new health is now " + getHealth()  + " !");
+                break;
+            case 2:
+                this.damage +=10;
+                System.out.println("Your damage has been increased by 10!");
+                System.out.println("You will deal " + getDamage()  + " !");
+
+                break;
+            default:
+                System.out.println("Invalid choice!");
+                break;
+        }
     }
 }
 

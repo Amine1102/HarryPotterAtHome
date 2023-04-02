@@ -2,6 +2,9 @@ package main;
 
 import java.util.Scanner;
 
+// TODO: 02/04/2023 Creer differentes baguetes
+
+
 public class Main {
     public static void main(String[] args) {
         // création d'une nouvelle instance de Wand
