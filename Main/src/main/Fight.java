@@ -22,7 +22,6 @@ public class Fight {
         Random rand = new Random();
         int succesChance = rand.nextInt(10); //Random int between 0 .. 9
         if(player.getHouse()== "Ravenclaw"){
-            succesChance =8;
             System.out.println("Ravenclaw never miss ! "); //ravenclaw are more accurate
             player.setDamage(obj.getDmg());
             System.out.println("You dealt " + player.getDamage() + " damage to " + enemy.getName() + "!");
