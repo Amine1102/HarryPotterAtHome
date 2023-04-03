@@ -22,18 +22,28 @@ public class Fight {
         Random rand = new Random();
         int succesChance = rand.nextInt(10); //Random int between 0 .. 9
         if(player.getHouse()== "Ravenclaw"){
+            if(obj.getName() == "pierre"){
+                player.setDamage(obj.getDmg());
+                System.out.println("You dealt " + player.getDamage() + " damage to " + enemy.getName() + "!");
+            }
+            else if(obj.getName() == "cailloux"){
+                player.setDamage(obj.getDmg());
+                System.out.println("You dealt " + player.getDamage() + " damage to " + enemy.getName() + "!");
+            }
             System.out.println("Ravenclaw never miss ! "); //ravenclaw are more accurate
-            player.setDamage(obj.getDmg());
-            System.out.println("You dealt " + player.getDamage() + " damage to " + enemy.getName() + "!");
+            enemy.damage((player.getDamage()));
         }
         else if(succesChance <8){ //If not ravenclaw, 80% of succes
             if(obj.getName() == "pierre"){
                 player.setDamage(obj.getDmg());
                 System.out.println("You dealt " + player.getDamage() + " damage to " + enemy.getName() + "!");
             }
+            else if(obj.getName() == "cailloux"){
+                player.setDamage(obj.getDmg());
+                System.out.println("You dealt " + player.getDamage() + " damage to " + enemy.getName() + "!");
+            }
             enemy.damage((player.getDamage()));
             //System.out.println("You dealt " + player.getDamage() + " damage to " + enemy.getName() + "!");
-
         }
         else{
             System.out.println("You missed ! ");
@@ -41,7 +51,7 @@ public class Fight {
     }
 
     public static ObjectLvl1 pierre = new ObjectLvl1("pierre",10, 25);
-    public static ObjectLvl1 rock = new ObjectLvl1("cailloux",50, 12);
+    public static ObjectLvl1 rock = new ObjectLvl1("cailloux",50, 25);
     public boolean startLevel1() {
 
         Scanner scanner = new Scanner(System.in);
