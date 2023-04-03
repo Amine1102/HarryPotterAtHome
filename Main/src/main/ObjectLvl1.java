@@ -14,7 +14,7 @@ public class ObjectLvl1 {
 
     @Override
     public String toString() {
-        return "You have " + nbObj + " " + this.name + ", and this make " + this.dmg;
+        return "You have " + nbObj + " " + this.name + ", and this make " + this.dmg + "damages";
     }
 
     public String getName() {
