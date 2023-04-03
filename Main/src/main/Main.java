@@ -5,7 +5,7 @@ import java.util.Scanner;
 // TODO: 02/04/2023 Unit test
 /*
 Enemy : OK
-Fight :
+Fight : There is an issue with Ravenclaw
 Main : OK
 ObjectLvl1 : OK
 Potion : OK

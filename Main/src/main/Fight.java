@@ -22,7 +22,7 @@ public class Fight {
         Random rand = new Random();
         int succesChance = rand.nextInt(10); //Random int between 0 .. 9
         if(player.getHouse()== "Ravenclaw"){
-            succesChance =10;
+            succesChance =8;
             System.out.println("Ravenclaw never miss ! "); //ravenclaw are more accurate
             player.setDamage(obj.getDmg());
             System.out.println("You dealt " + player.getDamage() + " damage to " + enemy.getName() + "!");
@@ -59,11 +59,11 @@ public class Fight {
 
             switch (choice) {
                 case 1:
-                    System.out.println("Choose on obect for your spell : ");
+                    System.out.println("Choose one obect for your spell : ");
                     System.out.println("choice 1 is : " + " " + pierre.toString());
                     System.out.println("choice 2 is : " + " " + rock.toString());
                     int choiceObjToGet = scanner.nextInt();
-                    System.out.println("Choose on obect for your spell : ");
+                    System.out.println("Choose one obect for your spell : ");
                     if (choiceObjToGet == 1) {
                         this.attackLvl1(enemy, wizard, pierre);
                         this.removeOne(pierre);
