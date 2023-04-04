@@ -51,7 +51,7 @@ public class Fight {
     }
 
     public static ObjectLvl1 pierre = new ObjectLvl1("pierre",10, 25);
-    public static ObjectLvl1 rock = new ObjectLvl1("cailloux",50, 25);
+    public static ObjectLvl1 rock = new ObjectLvl1("cailloux",50, 5);
     public boolean startLevel1() {
 
         Scanner scanner = new Scanner(System.in);
