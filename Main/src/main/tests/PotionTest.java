@@ -18,7 +18,7 @@ import org.junit.Test;
             potion.regenHealth(wizard);
             assertEquals(60, wizard.getHealth());
 
-            wizard = new Wizard("Cedric", 45, 30, new Wand(core, 42), pet);
+            wizard = new Wizard("Amine", 45, 30, new Wand(core, 42), pet);
 
             potion.regenHealth(wizard);
             assertEquals(55, wizard.getHealth());
