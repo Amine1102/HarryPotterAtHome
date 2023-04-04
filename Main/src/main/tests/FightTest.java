@@ -6,7 +6,8 @@ import static org.junit.Assert.*;
 
 public class FightTest {
 
-    //IF "you missed", restart test
+    //Fail sometimes when the player miss
+    // IF "you missed", restart test
 
     @Test
     public void testAttackLvl1() {

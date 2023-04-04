@@ -10,7 +10,6 @@ Main : OK
 ObjectLvl1 : OK
 Potion : OK
 SortingHat : OK
-Wand :
 Wizard :
  */
 
