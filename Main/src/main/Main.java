@@ -2,7 +2,7 @@ package main;
 
 import java.util.Scanner;
 
-// TODO: 02/04/2023 Unit test
+// TODO Rajouter un 2eme niveau avec un autre sort
 /*
 Enemy : OK
 Fight : Ok
