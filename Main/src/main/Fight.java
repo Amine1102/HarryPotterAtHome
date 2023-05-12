@@ -22,11 +22,11 @@ public class Fight {
         Random rand = new Random();
         int succesChance = rand.nextInt(10); //Random int between 0 .. 9
         if(player.getHouse()== "Ravenclaw"){
-            if(obj.getName() == "pierre"){
+            if(obj.getName() == "rock"){
                 player.setDamage(obj.getDmg());
                 System.out.println("You dealt " + player.getDamage() + " damage to " + enemy.getName() + "!");
             }
-            else if(obj.getName() == "cailloux"){
+            else if(obj.getName() == "paper"){
                 player.setDamage(obj.getDmg());
                 System.out.println("You dealt " + player.getDamage() + " damage to " + enemy.getName() + "!");
             }
@@ -34,11 +34,11 @@ public class Fight {
             enemy.damage((player.getDamage()));
         }
         else if(succesChance <8){ //If not ravenclaw, 80% of succes
-            if(obj.getName() == "pierre"){
+            if(obj.getName() == "rock"){
                 player.setDamage(obj.getDmg());
                 System.out.println("You dealt " + player.getDamage() + " damage to " + enemy.getName() + "!");
             }
-            else if(obj.getName() == "cailloux"){
+            else if(obj.getName() == "paper"){
                 player.setDamage(obj.getDmg());
                 System.out.println("You dealt " + player.getDamage() + " damage to " + enemy.getName() + "!");
             }
@@ -50,17 +50,19 @@ public class Fight {
         }
     }
 
-    public static ObjectLvl1 pierre = new ObjectLvl1("pierre",10, 25);
-    public static ObjectLvl1 rock = new ObjectLvl1("cailloux",50, 5);
+    public static ObjectLvl1 paper = new ObjectLvl1("paper",20, 5);
+    public static ObjectLvl1 rock = new ObjectLvl1("rock",5, 25);
     public boolean startLevel1() {
 
         Scanner scanner = new Scanner(System.in);
 
+        System.out.println(" ...");
         System.out.println("You find yourself in the dungeon's bathroom ");
+        System.out.println("Someone ... or something is rushing you ! ");
         System.out.println("A battle has  started between " + wizard.getName() + " and " + enemy.getName() + "!! \n");
 
         while (!gameOver) {
-            System.out.println("Choose your action ");
+            System.out.println("What do you want to do ?  ");
             System.out.println("1. Use Wingardium Leviosa ");
             System.out.println("2. Use potion");
 
@@ -68,14 +70,13 @@ public class Fight {
 
             switch (choice) {
                 case 1:
-                    System.out.println("Choose one obect for your spell : ");
-                    System.out.println("choice 1 is : " + " " + pierre.toString());
-                    System.out.println("choice 2 is : " + " " + rock.toString());
+                    System.out.println("Which object do you want to use with Wingardium Leviosa? ");
+                    System.out.println("choice 1 : Paper " + paper.toString());
+                    System.out.println("choice 2 : Rock  " + rock.toString());
                     int choiceObjToGet = scanner.nextInt();
-                    System.out.println("Choose one obect for your spell : ");
                     if (choiceObjToGet == 1) {
-                        this.attackLvl1(enemy, wizard, pierre);
-                        this.removeOne(pierre);
+                        this.attackLvl1(enemy, wizard, paper);
+                        this.removeOne(paper);
                     } else if (choiceObjToGet == 2) {
                         this.attackLvl1(enemy, wizard, rock);
                         this.removeOne(rock);
